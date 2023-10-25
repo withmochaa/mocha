@@ -1,4 +1,4 @@
 # mocha
-University : Sejong University
-Department : Artificial Inteligence
+University : Sejong University/
+Department : Artificial Inteligence/
 Name : kang min kim

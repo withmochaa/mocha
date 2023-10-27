@@ -8,7 +8,7 @@ int main(void){
     y*=2;
     z%=10+20;
 
-    printf("%d %d %d",x,y,z);
-
+    printf("%d %d %d\n",x,y,z);
+    printf("%d",!-3);
     return 0;
 }

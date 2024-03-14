@@ -3,7 +3,10 @@
         "string.h": "c",
         "math.h": "c",
         "stdlib.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "time.h": "c",
+        "__bit_reference": "c",
+        "bitset": "c"
     },
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#1f6fd0",

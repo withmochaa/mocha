@@ -8,9 +8,9 @@
 #include <windows.h>
 
 
-int put_array(int* arr, int pre_one, int* count);
-int countOnesButSlow(int **X,int n);
-int countOnes(int **X,int n);
+int put_array(int* arr, int pre_one, int* count);//배열에 1을 램덤으로 넣는 함수
+int countOnesButSlow(int **X,int n);//느린 방법으로 1의 개수를 count
+int countOnes(int **X,int n);//빠른 방법으로 1의 개수를 count
 
 
 int main(void) {
@@ -20,8 +20,8 @@ int main(void) {
 
    QueryPerformanceFrequency(&ticks);
 
-   n = 30000; //n is 30000 and fas_ver
-   temp = n;
+   int n = 30000; //n이 30000이고 빠른 버전
+   int temp = n;
    count = 0;
    ar = (int**)calloc(n, sizeof(int*));
 
@@ -42,7 +42,7 @@ int main(void) {
    }
    free(ar);
 
-   n = 10000; // n is 10000 and fas_ver
+   n = 10000; // n이 10000이고 빠른 버전일 때
    temp = n;
    count = 0;
    ar = (int**)calloc(n, sizeof(int*));
@@ -64,7 +64,7 @@ int main(void) {
    }
    free(ar);
 
-   n = 20000; // n is 20000 and fast_ver
+   n = 20000; // n이 20000이고 빠른 버전일 때
    temp = n;
    count = 0;
    ar = (int**)calloc(n, sizeof(int*));
@@ -86,7 +86,7 @@ int main(void) {
    }
    free(ar);
 
-   n = 30000; // n is 30000 and slow_ver
+   n = 30000; // n이 30000이고 느린 버전일 때
    temp = n;
    count = 0;
    ar = (int**)calloc(n, sizeof(int*));
@@ -108,7 +108,7 @@ int main(void) {
    }
    free(ar);
 
-   n = 10000; // n is 10000 and slow_ver
+   n = 10000; //n이 10000이고 느린 버전일 때
    temp = n;
    count = 0;
    ar = (int**)calloc(n, sizeof(int*));
@@ -130,8 +130,7 @@ int main(void) {
    }
    free(ar);
 
-   n = 20000; // n is 20000 slow_ver
-   temp = n;
+   n = 20000; //n이 20000이고 느린 버전일 때
    count = 0;
    ar = (int**)calloc(n, sizeof(int*));
 
@@ -159,28 +158,29 @@ int main(void) {
 
 
 
-int put_array(int* arr, int pre_one, int* count) { 
+int put_array(int* arr, int pre_one, int* count) { //배열에 1을 램덤하게 넣는 함수
 
-   int min = pre_one * 0.9;
-   int one = rand() % (pre_one - min + 1) + min;
-   for (int i = 0; i < one; i++) {
+   int min = pre_one * 0.9;//최솟값 설정
+   int one = rand() % (pre_one - min + 1) + min;//랜덤한 범위 내의 값을 구함
+
+   for (int i = 0; i < one; i++) {//1을 랜덤 배치
       arr[i] = 1;
-      *count=*count+1;
+      *count=*count+1;//1의 개수 증가
    }
    
    return one;
 }
 
-int countOnesButSlow(int **X,int n){
+int countOnesButSlow(int **X,int n){//느린 방법으로 1의 개수를 count하는 함수
 
     int count=0;
 
-    for(int i=0;i<n;i++){
+    for(int i=0;i<n;i++){//배열을 돌면서 1의 개수 카운트
         for(int j=0;j<n;j++){
             if(X[i][j]==1){
                 count++;
             }
-            else if(X[i][j]==0){
+            else if(X[i][j]==0){//0을 만나면 탐색중인 행의 계산 중단
                 break;
             }
         }
@@ -190,17 +190,17 @@ int countOnesButSlow(int **X,int n){
     return count;
 }
 
-int countOnes(int **X,int n){
+int countOnes(int **X,int n){//빠른 방법으로 1을 count하는 함수
 
     int i=0,j=0;
     int count=0;
-    while(i<n){
 
+    while(i<n){//배열을 돌면서 1의 개수 count
         if(X[i][j]==1){
             j++;
             count++;
         }
-        if(X[i][j]==0||j==n){
+        if(X[i][j]==0||j==n){//행의 끝에 도착하거나 0을 만나면 다음 행으로 이동
             i++;
             j=0;
         }
@@ -210,7 +210,6 @@ int countOnes(int **X,int n){
     return count;
 
 }
-
 
 */
 

@@ -4,8 +4,8 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-#include <time.h>
-#include <windows.h>
+#include<time.h>
+#include<windows.h>
 
 
 int put_array(int* arr, int pre_one, int* count);

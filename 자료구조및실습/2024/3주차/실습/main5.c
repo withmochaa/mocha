@@ -1,34 +1,39 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-#pragma warning(disable:4996)
+#pragma warning(disable:4996) 
 
-void ha(int N, char a,char b,char c);
+// 하노이 탑을 구현하는 함수
+void ha(int N, char a, char b, char c);
 
 int main(void){
 
     int N;
 
-    scanf("%d",&N);
+    // 사용자로부터 입력 받은 원반의 개수
+    scanf("%d", &N);
 
-    ha(N,'A','B','C');
+    // 하노이 탑을 구현하는 함수 호출
+    ha(N, 'A', 'B', 'C');
 
     return 0;
-
-    
 }
 
-void ha(int N, char a,char b,char c){
+// 하노이 탑을 재귀적으로 구현하는 함수
+void ha(int N, char a, char b, char c){
 
-
-    if(N==1){
-        printf("%c %c\n",a,c);
+    // 원반이 1개일 때
+    if(N == 1){
+        printf("%c %c\n", a, c);
         return;
     }
 
-    ha(N-1,a,c,b);
-    printf("%c %c\n",a,c);
-    ha(N-1,b,a,c);
+    // 가장 큰 원반을 제외한 원반들을 C로 이동
+    ha(N - 1, a, c, b);
+    // 가장 큰 원반을 목적지로 이동
+    printf("%c %c\n", a, c);
+    // C에 있는 원반들을 다시 목적지로 이동
+    ha(N - 1, b, a, c);
 
     return;
 }

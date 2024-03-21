@@ -1,5 +1,5 @@
-
 /*
+#define no_init_all deprecated
 #pragma warning(disable:4996)
 #include<stdio.h>
 #include<string.h>
@@ -9,8 +9,8 @@
 
 
 int put_array(int* arr, int pre_one, int* count);//배열에 1을 램덤으로 넣는 함수
-int countOnesButSlow(int **X,int n);//느린 방법으로 1의 개수를 count
-int countOnes(int **X,int n);//빠른 방법으로 1의 개수를 count
+int countOnesButSlow(int **X, int n);//느린 방법으로 1의 개수를 count
+int countOnes(int **X, int n);//빠른 방법으로 1의 개수를 count
 
 
 int main(void) {
@@ -20,8 +20,8 @@ int main(void) {
 
    QueryPerformanceFrequency(&ticks);
 
-   int n = 30000; //n이 30000이고 빠른 버전
-   int temp = n;
+   n = 30000; //n이 30000이고 빠른 버전
+   temp = n;
    count = 0;
    ar = (int**)calloc(n, sizeof(int*));
 
@@ -37,7 +37,7 @@ int main(void) {
 
    printf("n is 30,000 and version is fast_ver %d %d %.15lfsec\n", count, fast_count, (double)diff.QuadPart / (double)ticks.QuadPart);
 
-   for (int i = 0; i < n; i++){
+   for (int i = 0; i < n; i++) {
       free(ar[i]);
    }
    free(ar);
@@ -165,51 +165,50 @@ int put_array(int* arr, int pre_one, int* count) { //배열에 1을 램덤하게
 
    for (int i = 0; i < one; i++) {//1을 랜덤 배치
       arr[i] = 1;
-      *count=*count+1;//1의 개수 증가
+      *count = *count + 1;//1의 개수 증가
    }
-   
+
    return one;
 }
 
-int countOnesButSlow(int **X,int n){//느린 방법으로 1의 개수를 count하는 함수
+int countOnesButSlow(int **X, int n) {//느린 방법으로 1의 개수를 count하는 함수
 
-    int count=0;
+   int count = 0;
 
-    for(int i=0;i<n;i++){//배열을 돌면서 1의 개수 카운트
-        for(int j=0;j<n;j++){
-            if(X[i][j]==1){
-                count++;
-            }
-            else if(X[i][j]==0){//0을 만나면 탐색중인 행의 계산 중단
-                break;
-            }
-        }
-    }
+   for (int i = 0; i < n; i++) {//배열을 돌면서 1의 개수 카운트
+      for (int j = 0; j < n; j++) {
+         if (X[i][j] == 1) {
+            count++;
+         }
+         else if (X[i][j] == 0) {//0을 만나면 탐색중인 행의 계산 중단
+            break;
+         }
+      }
+   }
 
    //printf("%d----------\n",count);
-    return count;
+   return count;
 }
 
-int countOnes(int **X,int n){//빠른 방법으로 1을 count하는 함수
+int countOnes(int **X, int n) {//빠른 방법으로 1을 count하는 함수
 
-    int i=0,j=0;
-    int count=0;
+   int i = 0, j = 0;
+   int count = 0;
 
-    while(i<n){//배열을 돌면서 1의 개수 count
-        if(X[i][j]==1){
-            j++;
-            count++;
-        }
-        if(X[i][j]==0||j==n){//행의 끝에 도착하거나 0을 만나면 다음 행으로 이동
-            i++;
-            j=0;
-        }
+   while (i < n) {//배열을 돌면서 1의 개수 count
+      if (X[i][j] == 1) {
+         j++;
+         count++;
+      }
+      if (X[i][j] == 0 || j == n) {//행의 끝에 도착하거나 0을 만나면 다음 행으로 이동
+         i++;
+         j = 0;
+      }
 
-    }
-     //printf("%d----------\n",count);
-    return count;
+   }
+   //printf("%d—————\n",count);
+   return count;
 
 }
 
 */
-

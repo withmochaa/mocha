@@ -1,8 +1,18 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<time.h>
+#include<math.h>
+
 
 #define NG 5
 #define NE 4
+
+void add(int e, int g);
+void removeNode(int e, int g);
+void traverseShareElements(int g);
+void traverseShareGroups(int e);
+
 
 typedef struct Node {
     int element;
@@ -15,15 +25,20 @@ Node* groups[NG] = {NULL};
 Node* elements[NE] = {NULL};
 
 Node* createNode(int e, int g) {
+
     Node* newNode = (Node*)malloc(sizeof(Node));
+
     newNode->element = e;
     newNode->group = g;
     newNode->nextElement = NULL;
     newNode->nextGroup = NULL;
+
     return newNode;
 }
 
+
 void add(int e, int g) {
+
     Node* newNode = createNode(e, g);
     // 가입자 목록에 삽입
     newNode->nextGroup = groups[g];
@@ -35,7 +50,9 @@ void add(int e, int g) {
     printf("OK\n");
 }
 
+
 void removeNode(int e, int g) {
+
     Node **ptr, *temp = NULL;
 
     // 가입자 목록에서 삭제
@@ -47,7 +64,9 @@ void removeNode(int e, int g) {
         }
     }
 
-    if (temp == NULL) return; // 해당하는 노드가 없는 경우 바로 리턴
+    if (temp == NULL){
+        return; // 해당하는 노드가 없는 경우 바로 리턴
+    }
 
     // 쿠폰 목록에서 삭제
     for (ptr = &elements[e]; *ptr != NULL; ptr = &(*ptr)->nextElement) {
@@ -55,32 +74,45 @@ void removeNode(int e, int g) {
             *ptr = (*ptr)->nextElement;
             free(temp);
             printf("OK\n");
+
             return;
         }
     }
 }
 
+
 void traverseShareElements(int g) {
     Node* temp = groups[g];
-    if (!temp) printf("0"); // 요소가 없을 경우 "0" 출력
+
+    if (!temp){
+        printf("0"); // 요소가 없을 경우 "0" 출력
+    }
+
     while (temp != NULL) {
         printf("%d ", temp->element + 1);
         temp = temp->nextGroup;
     }
+
     printf("\n");
 }
 
 void traverseShareGroups(int e) {
     Node* temp = elements[e];
-    if (!temp) printf("0"); // 요소가 없을 경우 "0" 출력
+
+    if (!temp){
+        printf("0");
+    } // 요소가 없을 경우 "0" 출력
+
     while (temp != NULL) {
         printf("%c ", temp->group + 'A');
         temp = temp->nextElement;
     }
+    
     printf("\n");
 }
 
-int main() {
+
+int main(void){
     char command;
     int e, g;
     char groupName;
@@ -110,7 +142,8 @@ int main() {
                 e = elementNum - 1;
                 traverseShareGroups(e);
                 break;
+            case 'q':
+                return 0;
         }
     }
-    return 0;
 }

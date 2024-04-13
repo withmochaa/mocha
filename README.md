@@ -34,6 +34,7 @@
 
 <h3 align="center">📚 Studying 📚</h3>
 <div align="center">
+  🤖 Artificial Inteligence 🤖
   📚NLP/Time Series/AI Model/Transformer/DNN/RNN/CNN/ML/DL/DATA📚
 </div>
 

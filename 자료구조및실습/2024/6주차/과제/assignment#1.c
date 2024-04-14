@@ -4,16 +4,17 @@
 #include<time.h>
 #include<math.h>
 
-
+//NG와 NE 값 fix
 #define NG 5
 #define NE 4
 
+//define function
 void add(int e, int g);
 void removeNode(int e, int g);
 void traverseShareElements(int g);
 void traverseShareGroups(int e);
 
-
+//node sturcture define
 typedef struct Node {
     int element;
     int group;
@@ -21,41 +22,46 @@ typedef struct Node {
     struct Node* nextGroup;
 } Node;
 
+//global array define
 Node* groups[NG] = {NULL};
 Node* elements[NE] = {NULL};
 
+
+// make new node function
 Node* createNode(int e, int g) {
 
-    Node* newNode = (Node*)malloc(sizeof(Node));
+    Node* newNode = (Node*)malloc(sizeof(Node));//memory allocatyion
 
     newNode->element = e;
     newNode->group = g;
-    newNode->nextElement = NULL;
+
+    newNode->nextElement = NULL;// reset pointer
     newNode->nextGroup = NULL;
 
     return newNode;
 }
 
+//add function
 
 void add(int e, int g) {
 
     Node* newNode = createNode(e, g);
-    // 가입자 목록에 삽입
-    newNode->nextGroup = groups[g];
-    groups[g] = newNode;
-    // 쿠폰 목록에 삽입
+
+    newNode->nextGroup = groups[g];// insert into subscriber list
+    groups[g] = newNode;// insert into coupon list
+
     newNode->nextElement = elements[e];
     elements[e] = newNode;
 
-    printf("OK\n");
+    printf("OK\n");//print success
 }
 
-
+//delete function
 void removeNode(int e, int g) {
 
     Node **ptr, *temp = NULL;
 
-    // 가입자 목록에서 삭제
+    // delete into subscriber list
     for (ptr = &groups[g]; *ptr != NULL; ptr = &(*ptr)->nextGroup) {
         if ((*ptr)->element == e) {
             temp = *ptr;
@@ -65,14 +71,14 @@ void removeNode(int e, int g) {
     }
 
     if (temp == NULL){
-        return; // 해당하는 노드가 없는 경우 바로 리턴
+        return; // if no node shut down function
     }
 
-    // 쿠폰 목록에서 삭제
+    //delete into coupon list
     for (ptr = &elements[e]; *ptr != NULL; ptr = &(*ptr)->nextElement) {
         if ((*ptr)->group == g) {
             *ptr = (*ptr)->nextElement;
-            free(temp);
+            free(temp);//free memory
             printf("OK\n");
 
             return;
@@ -80,31 +86,32 @@ void removeNode(int e, int g) {
     }
 }
 
-
+//searching element function
 void traverseShareElements(int g) {
     Node* temp = groups[g];
 
     if (!temp){
-        printf("0"); // 요소가 없을 경우 "0" 출력
+        printf("0"); // if no temp print 0
     }
 
     while (temp != NULL) {
-        printf("%d ", temp->element + 1);
+        printf("%d ", temp->element + 1); 
         temp = temp->nextGroup;
     }
 
     printf("\n");
 }
 
+//searching group function
 void traverseShareGroups(int e) {
     Node* temp = elements[e];
 
     if (!temp){
-        printf("0");
-    } // 요소가 없을 경우 "0" 출력
+        printf("0");// if no temp print 0
+    } 
 
     while (temp != NULL) {
-        printf("%c ", temp->group + 'A');
+        printf("%c ", temp->group + 'A'); // print groups nome
         temp = temp->nextElement;
     }
     
@@ -118,7 +125,7 @@ int main(void){
     char groupName;
     int elementNum;
 
-    while (scanf(" %c", &command) && command != 'q') {
+    while (scanf(" %c", &command) && command != 'q') {// if input is q stop
         switch (command) {
             case 'a':
                 scanf("%d %c", &elementNum, &groupName);

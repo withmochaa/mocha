@@ -4,7 +4,7 @@
 #include<time.h>
 #include<math.h>
 
-//NG와 NE 값 fix
+//NG & NE fix
 #define NG 5
 #define NE 4
 
@@ -13,6 +13,7 @@ void add(int e, int g);
 void removeNode(int e, int g);
 void traverseShareElements(int g);
 void traverseShareGroups(int e);
+void freeMemory();
 
 //node sturcture define
 typedef struct Node {
@@ -118,6 +119,31 @@ void traverseShareGroups(int e) {
     printf("\n");
 }
 
+//free memory
+void freeMemory() {
+    Node *temp, *next;
+    int i;
+
+    // free group memory
+    for (i = 0; i < NG; ++i) {
+        temp = groups[i];
+        while (temp != NULL) {
+            next = temp->nextGroup;
+            free(temp);
+            temp = next;
+        }
+    }
+
+    // free element memory
+    for (i = 0; i < NE; ++i) {
+        temp = elements[i];
+        while (temp != NULL) {
+            next = temp->nextElement;
+            free(temp);
+            temp = next;
+        }
+    }
+}
 
 int main(void){
     char command;
@@ -150,6 +176,7 @@ int main(void){
                 traverseShareGroups(e);
                 break;
             case 'q':
+                freeMemory();
                 return 0;
         }
     }

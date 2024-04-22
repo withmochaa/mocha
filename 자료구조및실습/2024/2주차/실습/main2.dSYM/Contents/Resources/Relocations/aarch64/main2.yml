@@ -1,0 +1,8 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     "/Users/withmocha/Desktop/VisualStudioCode/자료구조및실습/2024/2주차/실습/main2"
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _mostOnes, symObjAddr: 0x0, symBinAddr: 0x100003D98, symSize: 0x98 }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _mostOnes, symObjAddr: 0x0, symBinAddr: 0x100003D98, symSize: 0x98 }
+  - { offsetInCU: 0xA1, offset: 0xA1, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x98, symBinAddr: 0x100003E30, symSize: 0x148 }
+...

@@ -16,10 +16,11 @@
 <div align="center">
 🏛️University : Sejong University  
   </div>
+  <br/>
 <div align="center">
 🖥️Department : Artificial Inteligence
   </div>
-
+<br/>
   <div align="center">
 🧸Name : kang min kim
   </div>

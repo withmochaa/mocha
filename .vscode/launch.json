@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/withmocha/Desktop/VisualStudioCode/자료구조및실습/2024/9주차/실습",
+      "program": "/Users/withmocha/Desktop/VisualStudioCode/자료구조및실습/2024/9주차/실습/build/Debug/outDebug"
+    }
+  ]
+}

@@ -60,7 +60,9 @@
     "stdio.h": "c"
   },
   "cSpell.words": [
+    "crossentropy",
     "dropna",
-    "iloc"
+    "iloc",
+    "softmax"
   ]
 }

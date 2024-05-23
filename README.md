@@ -4,8 +4,12 @@
   
   <!--Header-->
   ![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=Good%20to%20see%20you%20%F0%9F%A4%97)
-  
+  [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fwithmochaa&count_bg=%2340961E&title_bg=%23555555&icon=&icon_color=%23881F1F&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 </div>
+
+
+
+
 <div align="center">
   <h3 align="center">🐶About Me🐶</h3>
 

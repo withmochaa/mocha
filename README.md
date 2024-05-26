@@ -25,7 +25,11 @@
 🖥️Department : Artificial Inteligence🖥️
   </div>
 <br/>
+<div align="center">
+📚LAB : Sungkyunkwan University Medical Big Data Laboratory📚
+  </div>
   <div align="center">
+    <br/>
 🧸Name : kang min kim🧸
   </div>
  <br/>

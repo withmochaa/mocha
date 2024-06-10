@@ -26,7 +26,7 @@
   </div>
 <br/>
 <div align="center">
-📚LAB : Sungkyunkwan University Medical Big Data Laboratory📚
+💻LAB : Sungkyunkwan University Medical Big Data Laboratory💻
   </div>
   <div align="center">
     <br/>

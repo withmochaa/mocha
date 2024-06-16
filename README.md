@@ -65,9 +65,7 @@
 </div>
 <br/>
 <h3 align="center"🥇 The grand prize of the 17th Sejong University Creative Competition in 2024 🥇
-<div align="center">
-<img src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white"/></a>&nbsp 
-</div>
+  
 <br/>
 <h3 align="center">📚Interest 📚</h3>
 <div align="center">

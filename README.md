@@ -32,7 +32,6 @@
   <div align="center">
 🥇 The grand prize of the 17th Sejong University Creative Competition in 2024 🥇
   </div>
-  <br/>
   <div align="center">
     <br/>
 🧸Name : kang min kim🧸

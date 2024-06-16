@@ -28,6 +28,7 @@
 <div align="center">
 💻LAB : Sungkyunkwan University Medical Big Data Laboratory💻
   </div>
+  <br/>
   <div align="center">
 🥇 The grand prize of the 17th Sejong University Creative Competition in 2024 🥇
   </div>

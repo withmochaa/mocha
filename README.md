@@ -29,6 +29,10 @@
 💻LAB : Sungkyunkwan University Medical Big Data Laboratory💻
   </div>
   <div align="center">
+🥇 The grand prize of the 17th Sejong University Creative Competition in 2024 🥇
+  </div>
+  <br/>
+  <div align="center">
     <br/>
 🧸Name : kang min kim🧸
   </div>
@@ -64,7 +68,7 @@
   <img src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white"/></a>&nbsp 
 </div>
 <br/>
-<h3 align="center"🥇 The grand prize of the 17th Sejong University Creative Competition in 2024 🥇
+
   
 <br/>
 <h3 align="center">📚Interest 📚</h3>

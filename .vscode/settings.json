@@ -64,5 +64,6 @@
     "dropna",
     "iloc",
     "softmax"
-  ]
+  ],
+  "python.analysis.typeCheckingMode": "basic"
 }

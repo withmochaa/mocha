@@ -18,15 +18,15 @@
 
 
 <div align="center">
-🏛️University : Sejong University🏛️
+🏛️ University : Sejong University 🏛️
   </div>
   <br/>
 <div align="center">
-🖥️Department : Artificial Inteligence🖥️
+🖥️ Department : Artificial Inteligence 🖥️
   </div>
 <br/>
 <div align="center">
-💻LAB : Sungkyunkwan University Medical Big Data Laboratory💻
+💻 LAB : Sungkyunkwan University Medical Big Data Laboratory 💻
   </div>
   <br/>
   <div align="center">
@@ -34,7 +34,7 @@
   </div>
   <div align="center">
     <br/>
-🧸Name : kang min kim🧸
+🧸 Name : kang min kim 🧸
   </div>
  <br/>
 </div>
